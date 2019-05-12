@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.url.dao.LinkMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.url.entity.Link">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="longUrl" jdbcType="VARCHAR" property="longUrl" />
+        <result column="shortUrl" jdbcType="VARCHAR" property="shortUrl" />
+    </resultMap>
+
+    <select id="selectLinkInfoByLongUrl" resultMap="BaseResultMap">
+        SELECT * FROM link WHERE longUrl = #{longUrl}
+    </select>
+
+    <select id="selectLongUrlByShortUrl" resultType="java.lang.String">
+        SELECT longUrl FROM link WHERE shortUrl = #{shortUrl}
+    </select>
+
+    <insert id="insert" parameterType="com.demo.url.entity.Link">
+        insert into
+        link (id, shortUrl, longUrl)
+        values
+        (#{id}, #{shortUrl}, #{longUrl})
+    </insert>
+</mapper>
