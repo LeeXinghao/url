@@ -19,7 +19,7 @@
 #### 2. 要写测试代码完成测试，覆盖尽量多的case。
 * 项目中所有功能基本都实现了测试覆盖。测试主要分为两方面一是对传入参入的测试，二是对功能实现的测试
 
-## 三. 接口设计
+## 二. 接口设计
 * 长链接转短链接
 ```
     type : GET
@@ -36,14 +36,14 @@
       String shortUrl
 ```
 
-## 二. 框架
+## 三. 框架
  主体框架 springboot+mybatis ；
  使用Maven进行管理；
  数据库为 Mysql。
 
-## 三. 数据库
+## 四. 数据库
 ### 库表创建文件路径 ： File/link.sql
-### 语句
+### SQL
 ```
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -62,5 +62,5 @@ CREATE TABLE `link` (
 SET FOREIGN_KEY_CHECKS = 1;
 ```
 
-## 四.改进
+## 五.改进
 1. 可以对长链接的合法性进行校验。
